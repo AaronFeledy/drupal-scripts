@@ -1,11 +1,14 @@
 #!/bin/bash
 
-## Common
+## Script Initializer
 ## 
-## This script contains a common setup to be sourced by other scripts within this project. Source this script at the
-## beginning of other scripts by using:
+## This script contains common variables and functions to initialize other
+## scripts within this project. Source this script at the beginning of other
+## scripts by using:
+##
 ## SCRIPTPATH="${0%/*}";
 ## . $SCRIPTPATH/common.sh
+##
 ## ------------------------------------------------------------
 
 # The $SCRIPTPATH variable represents the directory where this script resides.
