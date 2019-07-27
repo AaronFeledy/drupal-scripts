@@ -14,13 +14,6 @@
 # The $SCRIPTPATH variable represents the directory where this script resides.
 SCRIPTPATH="${0%/*}";
 
-# Source system environment variables
-# . /etc/environment
-
-# Source a .env file. Adjust the relative path to  your .env
-# file as needed.
-# . $SCRIPTPATH/../../.env
-
 # Some text colors
 TXT_RESET="tput sgr 0"
 TXT_BOLD="tput bold"
@@ -33,3 +26,9 @@ tell() { echo "$($TXT_YEL)$*$($TXT_RESET)" >&2; }
 yell() { echo "$($TXT_RED)$(tput bold)$*$($TXT_RESET)" >&2; }
 die() { echo; yell "$*"; echo; exit 111; }
 try() { "$@" || yell "Cannot $*"; }
+
+# Source additional functions
+source $SCRIPTPATH/functions.sh
+
+# Source additional variables
+source $SCRIPTPATH/variables.sh
