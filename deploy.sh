@@ -66,6 +66,29 @@ fi
 
 
 #
+# Build steps
+#
+
+# Install dependencies
+composer -d "${APP_WEBROOT}" install --no-interaction
+
+# Rebuild Drupal caches using the latest code
+drush -r "${APP_WEBROOT}" cache:rebuild
+
+# Run Drupal's database update script
+drush -r "${APP_WEBROOT}" updatedb --yes
+
+# Import configuration changes
+drush -r "${APP_WEBROOT}" config:import --yes
+
+# Two imports are necessary for sites using the config_split module
+drush -r "${APP_WEBROOT}" config:import --yes
+
+# Rebuild the caches with everything updated
+drush -r "${APP_WEBROOT}" cache:rebuild
+
+
+#
 # Post Deployment Tasks
 #
 
