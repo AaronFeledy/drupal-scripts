@@ -6,7 +6,7 @@
 ## ------------------------------------------------------------
 
 # Load common functions and variables
-SCRIPTPATH="${0%/*}";
+SCRIPTPATH=$(dirname "${BASH_SOURCE[0]}");
 . $SCRIPTPATH/common/init.sh
 
 # Require root.

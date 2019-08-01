@@ -12,7 +12,7 @@
 ## ------------------------------------------------------------
 
 # The $SCRIPTPATH variable represents the directory where this script resides.
-SCRIPTPATH="${0%/*}";
+SCRIPTPATH=$(dirname "${BASH_SOURCE[0]}");
 
 # Some text colors
 TXT_RESET="tput sgr 0"
